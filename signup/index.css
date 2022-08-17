@@ -1,0 +1,98 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+a {
+  text-decoration: none;
+}
+.container {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #333333;
+}
+.title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+}
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+    width: 50%;
+}
+input{
+    font-size: 16px;
+    font-weight: 500;
+    border: 1.5px solid #b1b0b0;
+    border-radius: 7px;
+    margin: 6px 2%;
+    height: 40px;
+    padding: 7px;
+}
+.full-width{
+    width: 100%;
+}
+.half-width{
+    width: 46%;
+}
+input:focus {
+  outline: none;
+  border: 1px solid blue;
+  box-shadow: 0px 0px 5px 2px #888888;
+}
+.agree{
+    margin: 7px 0 3px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#agreement{
+    height: 14px;
+}
+.agree > div{
+    width: 23%;
+    font-size: 14px;
+    font-weight: 700;
+}
+p{
+    text-align: right;
+    font-size: 14px;
+    width: 77%;
+}
+button{
+    width: 46%;
+    height: 40px;
+    margin: 0 2%;
+    border: 0;
+    border-radius: 7px;
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+}
+.sign-in{
+    background-color: #5CB85C;
+}
+.register{
+    background-color: #428BCA;
+
+}
+@media only screen and (max-width: 900px) {
+    form {
+        width: 70%;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    form {
+        width: 90%;
+    }
+  }
