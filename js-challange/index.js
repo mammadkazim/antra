@@ -33,6 +33,17 @@ console.log(palindrome("kazim"));
 // 3. Write a JavaScript function that generates all combinations of a string.
 // Example string: 'dog'
 // Expected Output: d, do, dog, o, og, g
+function makeWords(word) {
+  const letters = word.split("");
+  const words = [];
+  for (let i = 0; i <= letters.length; i++) {
+    for (let j = 1; j <= letters.length; j++) {
+      if (i !== j && i < j) words.push(word.slice(i, j));
+    }
+  }
+  return words;
+}
+console.log(makeWords("kazim"));
 
 // 4. Write a JavaScript function that returns a passed string with letters in alphabetical order.
 // Example string: 'webmaster'
@@ -174,6 +185,22 @@ console.log(findFactors(23));
 // Here 46 is the amount. and 25, 10, 5, 2, 1 are coins.
 // Output: 25, 10, 10, 1
 
+function amountToCoins(amount, availableCoins) {
+  const coins = [];
+  let count = 0;
+  for (let i = 0; i < availableCoins.length; i++) {
+    count = Math.floor(amount / availableCoins[i]);
+    amount = amount % availableCoins[i]
+    if (count >= 1) {
+      while (count > 0) {
+        count--;
+        coins.push(availableCoins[i]);
+      }
+    }
+  }
+  return coins
+}
+console.log(amountToCoins(57, [25, 10, 5, 2, 1]))
 // 15. Write a JavaScript function to compute the value of bn where n is the exponent and b is the bases. Accept b and n from the user and display the result.
 function expon(b, n) {
   let result = b;
@@ -198,7 +225,6 @@ console.log(removeEqualLetters("thequickbrownfoxjumpsoverthelazydog"));
 // 17. Write a JavaScript function to get the number of occurrences of each letter in specified string.
 function findCountOfLetters(str) {
   const strArray = str.split("");
-
 }
 
 // 29. Write a JavaScript function to get the function name.
