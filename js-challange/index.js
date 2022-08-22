@@ -190,7 +190,7 @@ function amountToCoins(amount, availableCoins) {
   let count = 0;
   for (let i = 0; i < availableCoins.length; i++) {
     count = Math.floor(amount / availableCoins[i]);
-    amount = amount % availableCoins[i]
+    amount = amount % availableCoins[i];
     if (count >= 1) {
       while (count > 0) {
         count--;
@@ -198,9 +198,9 @@ function amountToCoins(amount, availableCoins) {
       }
     }
   }
-  return coins
+  return coins;
 }
-console.log(amountToCoins(57, [25, 10, 5, 2, 1]))
+console.log(amountToCoins(57, [25, 10, 5, 2, 1]));
 // 15. Write a JavaScript function to compute the value of bn where n is the exponent and b is the bases. Accept b and n from the user and display the result.
 function expon(b, n) {
   let result = b;
@@ -225,7 +225,15 @@ console.log(removeEqualLetters("thequickbrownfoxjumpsoverthelazydog"));
 // 17. Write a JavaScript function to get the number of occurrences of each letter in specified string.
 function findCountOfLetters(str) {
   const strArray = str.split("");
+  let result = {}
+  for (let i = 0; i < strArray.length; i++) {
+    result[strArray[i]] = strArray.filter(letter=>letter===strArray[i]).length
+    strArray.filter(letter=>letter!==strArray[i])
+  }
+  return result
 }
+console.log(findCountOfLetters("shababakiki")); // {s:1,h:1,a:3,b:2,k:2,i:2}
+
 
 // 29. Write a JavaScript function to get the function name.
 let returnName = (func) => {
