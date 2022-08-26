@@ -2,14 +2,15 @@
 
 function logMessage() {
   let count = 1;
-  return () => {
+  return function inner(){
     count <= 5
-      ? console.log("Congrats you earn the chance!")
+      ? console.log("Congrats, you earned the chance!")
       : console.log("Sorry you missed the chance");
 
     count++;
   };
 }
+
 const invokeLogMessage = logMessage();
 invokeLogMessage();
 invokeLogMessage();
@@ -18,6 +19,7 @@ invokeLogMessage();
 invokeLogMessage();
 invokeLogMessage();
 invokeLogMessage();
+
 
 // 2. Implement the callback function "longerThan" for : Array.filter(longerThan(minimumLength))  which takes minimumLength as an input and filter all the strings whose length is longer than minimumLength (hint : using currying)
 
